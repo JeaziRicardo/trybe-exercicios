@@ -1,0 +1,36 @@
+h1 {
+  width:"65px";
+  color: orange;
+  font-family: sans-serif;
+}
+
+ul {
+  background-color: orangered;
+}
+
+.back-color {
+  background-color: palegreen;
+}
+
+p {
+  font-weight: 600;
+  width: 3em;
+  font-style: text-align;
+}
+
+body {
+  font-size: 16;
+  font-style: text-decoration;
+}
+
+#item1 {
+  background-color: yellow;
+}
+
+#item2 {
+  background-color: red;
+}
+
+#item3 {
+  background-color: brown;
+}
