@@ -55,6 +55,11 @@
       let upperCase = document.getElementsByTagName('p')[0];
       upperCase.style.textTransform = "uppercase";
 
+      let display = document.getElementsByTagName('p');
+      for (let i = 0; i < display.length; i += 1) {
+        console.log(display[i]);
+      }
+
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()
