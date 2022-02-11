@@ -28,10 +28,19 @@ filhoElementoOndeEsta.id = 'filhoElementoOndeEsta';
 ondeEstou.appendChild(filhoElementoOndeEsta);
 
 // 3. Crie um filho para primeiroFilhoDoFilho .
-let primeiroFilhoDoFilho = documento.getElementById('primeiroFilhoDoFilho');
+let primeiroFilhoDoFilho = document.getElementById('primeiroFilhoDoFilho');
 let filhoDoPrimeiroFilhoDoFilho = document.createElement('section');
 filhoDoPrimeiroFilhoDoFilho.id = 'filhoDoPrimeiroFilhoDoFilho';
 primeiroFilhoDoFilho.appendChild(filhoDoPrimeiroFilhoDoFilho);
 
 // 4. A partir desse filho criado, acesse terceiroFilho .
 document.getElementById('filhoDoPrimeiroFilhoDoFilho').parentElement.parentElement.nextElementSibling;
+
+// Remova todos os elementos filhos de paiDoPai exceto pai , elementoOndeVoceEsta e primeiroFilhoDoFilho .
+let pai = document.getElementById('pai');
+for (let index = 0; index < pai.childNodes.length; index += 1) {
+  let element = pai.childNodes[index];
+  if (element !== 'elementoOndeVoceEsta' && element !== 'primeiroFilhoDoFilho') {
+    element.remove();
+  }
+}
