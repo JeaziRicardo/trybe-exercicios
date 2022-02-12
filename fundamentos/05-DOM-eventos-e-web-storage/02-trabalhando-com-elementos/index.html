@@ -57,13 +57,18 @@
   </head>
   <body>
     <script>
-      // COLOQUE SEU CÓDIGO AQUI
+
+      // 1. Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
+      let body = document.querySelector('body');
+      let title = document.createElement('h1');
+      title.innerText = 'Exercício 5.2';
+      body.appendChild(title);
+
     </script>
   </body>
 </html>
 
 <!-- 
-1. Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
 2. Adicione a tag main com a classe main-content como filho da tag body ;
 3. Adicione a tag section com a classe center-content como filho da tag main criada no passo 2;
 4. Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;
