@@ -62,9 +62,14 @@ const books = [
 ];
 
 // 2 - Crie uma string com os nomes de todas as pessoas autoras.
-const expectedResult = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
+// const expectedResult = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
 
 function reduceNames() {
-  return books.reduce(((acc, curr) => `${acc} ${curr.author.name}`), '');
+  return books.reduce(((acc, curr, index, array) => {
+    if (index === array.length - 1) {
+      return `${acc} ${curr.author.name}.`;
+    }
+    return `${acc} ${curr.author.name},`;
+  }), '');
 }
-console.log(reduceNames());
+console.log(reduceNames().trim());
