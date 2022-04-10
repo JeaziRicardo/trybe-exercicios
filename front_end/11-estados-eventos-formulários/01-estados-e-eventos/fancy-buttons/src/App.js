@@ -33,13 +33,32 @@ class App extends Component {
     }));
   }
 
+  veryEven(num) {
+    return num % 2 === 0 && num > 0 ? "green" : "white";
+  }
+
   render() {
     const { ClicksThree, clicksTwo, clicksOne } = this.state;
     return (
       <div>
-        <button onClick={ this.handleClickOne }>Clicou: { clicksOne }</button>
-        <button onClick={ this.handleClickTwo }>Clicou: { clicksTwo }</button>
-        <button onClick={ this.handleClickThree }>Clicou: { ClicksThree }</button>
+        <button 
+          style={{backgroundColor: this.veryEven(clicksOne)}}
+          onClick={ this.handleClickOne }
+        >
+          Clicou: { clicksOne }
+        </button>
+        <button
+          style={{backgroundColor: this.veryEven(clicksTwo)}}
+          onClick={ this.handleClickTwo }
+        >
+          Clicou: { clicksTwo }
+        </button>
+        <button
+          style={{backgroundColor: this.veryEven(ClicksThree)}}
+          onClick={ this.handleClickThree }
+        >
+          Clicou: { ClicksThree }
+        </button>
       </div>
     );
   }
