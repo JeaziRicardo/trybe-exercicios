@@ -5,29 +5,41 @@ class App extends Component {
 
   constructor() {
     super()
+    this.state = {
+      clicksOne: 0,
+      clicksTwo: 0,
+      ClicksThree: 0,
+    }
     this.handleClickOne = this.handleClickOne.bind(this);
     this.handleClickTwo = this.handleClickTwo.bind(this);
     this.handleClickThree = this.handleClickThree.bind(this);
   }
 
   handleClickOne() {
-    console.log('click aqui');
+    this.setState((prevState) => ({
+      clicksOne: prevState.clicksOne + 1,
+    }));
   }
   
   handleClickTwo() {
-    console.log('click de novo');
+    this.setState((prevState) => ({
+      clicksTwo: prevState.clicksTwo + 1,
+    }));
   }
   
   handleClickThree() {
-    console.log('click última vez');
+    this.setState((prevState) => ({
+      ClicksThree: prevState.ClicksThree + 1,
+    }));
   }
 
   render() {
+    const { ClicksThree, clicksTwo, clicksOne } = this.state;
     return (
       <div>
-        <button onClick={ this.handleClickOne }>Meu Botão 1</button>
-        <button onClick={ this.handleClickTwo }>Meu Botão 2</button>
-        <button onClick={ this.handleClickThree }>Meu Botão 3</button>
+        <button onClick={ this.handleClickOne }>Clicou: { clicksOne }</button>
+        <button onClick={ this.handleClickTwo }>Clicou: { clicksTwo }</button>
+        <button onClick={ this.handleClickThree }>Clicou: { ClicksThree }</button>
       </div>
     );
   }
