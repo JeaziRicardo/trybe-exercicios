@@ -3,6 +3,13 @@ import React, { Component } from 'react';
 
 class App extends Component {
 
+  constructor() {
+    super()
+    this.handleClickOne = this.handleClickOne.bind(this);
+    this.handleClickTwo = this.handleClickTwo.bind(this);
+    this.handleClickThree = this.handleClickThree.bind(this);
+  }
+
   handleClickOne() {
     console.log('click aqui');
   }
