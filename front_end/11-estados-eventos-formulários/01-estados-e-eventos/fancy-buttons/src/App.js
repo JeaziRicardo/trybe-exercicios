@@ -1,19 +1,20 @@
 import './App.css';
 import React, { Component } from 'react';
 
-function handleClickOne() {
-  console.log('click');
-}
-
-function handleClickTwo() {
-  console.log('click');
-}
-
-function handleClickThree() {
-  console.log('click');
-}
-
 class App extends Component {
+
+  handleClickOne() {
+    console.log('click aqui');
+  }
+  
+  handleClickTwo() {
+    console.log('click de novo');
+  }
+  
+  handleClickThree() {
+    console.log('click última vez');
+  }
+
   render() {
     return (
       <div>
