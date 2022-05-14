@@ -34,11 +34,14 @@
     </div>
     <script>
       const next = document.getElementById('next');
-      const previous = document.getElementById('previous')
+      const previous = document.getElementById('previous');
+      const valueSpan = document.getElementById('value');
+      const container = document.getElementById('container');
       const ESTADO_INICIAL = {
         colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
         index: 0,
       };
+      
       const reducer = ({state: ESTADO_INICIAL, action}) => {
         switch (action.type) {
           case 'NEXT_COLOR':
@@ -55,13 +58,21 @@
             return state;
         }
       };
+
+      const store = Redux.creatState(reducer);
+
       next.addEventListener('click', () => {
         store.dispatch({ type: 'NEXT_COLOR' });
       });
       previous.addEventListener('click', () => {
         store.dispatch({ type: 'PREVIOUS_COLOR' });
       });
-      const store = Redux.creatState(reducer);
+
+      store.subscribe(() => {
+        const { colors, index } = store.getState();
+        valueSpan.innerHTML = colors[index];
+        container.style.backgroundColor = colors[index];
+      });
     </script>
   </body>
 </html>
