@@ -50,12 +50,12 @@
         }
       };
 
-      const reducerCombinado = combaineReducers({
+      const reducerCombinado = Redux.combaineReducers({
         meuPrimeiroReducer,
         meuSegundoReducer,
       });
 
-      const store = createStore(reducerCombinado);
+      const store = Redux.createStore(reducerCombinado);
     </script>
   </body>
 </html>
