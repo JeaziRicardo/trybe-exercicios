@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#box {
+  border: 3px solid black;
+  margin: 10px 5px;
+}
+
+#personal-data {
+  margin-right: 77%;
+}
