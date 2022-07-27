@@ -9,5 +9,8 @@
   },
   "keywords": [],
   "author": "Jeazi Ricardo",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
