@@ -1,3 +1,5 @@
+const readline = require('readline-sync');
+
 const MEU_PESO = 125;
 const MINHA_ALTURA = 177;
 
