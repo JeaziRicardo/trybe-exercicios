@@ -1,26 +1,18 @@
 const fs = require('fs').promises;
 
-async function getSimpsonById(simpsonId) {
+async function filterSimpsons() {
   const read = await fs.readFile('./simpsons.json', 'utf8');
 
   const simpsons = JSON.parse(read);
-  const choceSimpson = simpsons.find(({ id }) => +id === simpsonId);
+  const filter = simpsons.filter(({ id }) => id !== '10' && id !== '6');
 
-  if(!choceSimpson) {
-    throw new Error('id não encontrado');
-  }
+  const json = JSON.stringify(filter);
 
-  return choceSimpson;
-
+  await fs.writeFile('./simpsons.json', json);
 }
 
-async function main() {
-  try {
-    const simpson = await getSimpsonById(1);
-    console.log(simpson);
-  } catch(err) {
-    console.log(err);
-  }
+function main() {
+  filterSimpsons();
 }
 
 main();
