@@ -1,13 +1,11 @@
 const fs = require('fs').promises;
 
 async function familySimpsons() {
-  const read = await fs.readFile('./simpsons.json', 'utf8');
+  const read = await fs.readFile('./simpsonFamily.json', 'utf8');
 
   const simpsons = JSON.parse(read);
-  const familyIds = [1, 2, 3, 4];
-  const filter = simpsons.filter(({ id }) => familyIds.includes(+id));
-
-  const json = JSON.stringify(filter);
+  simpsons.push({ "id": "5", "name": "Nelson Muntz" });
+  const json = JSON.stringify(simpsons);
 
   await fs.writeFile('./simpsonFamily.json', json);
 }
